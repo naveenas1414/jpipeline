@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('BULID') {
             steps {
-                echo 'Hello World'
+		sh '''
+			#!/bin/bash
+			cd /home/ec2-user/naveen
+			git clone https://github.com/naveenas1414/c-project-test.git
+			cd c-project-test
+			make
+		'''
             }
         }
     }
