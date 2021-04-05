@@ -7,8 +7,11 @@ pipeline {
 		sh '''
 			#!/bin/bash
 			cd /var/lib/jenkins/workspace
+			git pull  https://github.com/naveenas1414/c-project-test.git
+			if [ $? -ne 0 ];then
 			git clone https://github.com/naveenas1414/c-project-test.git
-			cd c-project-test
+			fi
+			cd /var/lib/jenkins/workspace/c-project-test
 			make
 		'''
             }
