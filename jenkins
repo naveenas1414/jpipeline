@@ -1,8 +1,7 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
-	agent slave1
         stage('BUILD') {
             steps {
 		sh '''
